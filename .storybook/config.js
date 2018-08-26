@@ -1,10 +1,11 @@
 import { configure } from '@storybook/react';
 
-//import '../src/styles/custom.scss';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 function loadStories() {
-  require('../stories/index.js');
+  //require('../stories/index.js');
   require('../stories/alerts.js');
+  require('../stories/buttons.js');
   // You can require as many stories as you need.
 }
 

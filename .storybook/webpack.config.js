@@ -14,10 +14,31 @@ module.exports = {
     module: {
       rules: [
         {
-            test: /\.scss$/,
-            loaders: ["style-loader", "css-loader", "sass-loader"],
-            include: path.resolve(__dirname, "../")
-          }
+          test: /(\.css|\.scss|\.sass)$/,
+          use: [
+              'style-loader',
+              {
+                  loader: 'css-loader',
+                  options: {
+                      sourceMap: true
+                  }
+              }, {
+                  loader: 'postcss-loader',
+                  options: {
+                      plugins: () => [
+                          require('autoprefixer')
+                      ],
+                      sourceMap: true
+                  }
+              }, {
+                  loader: 'sass-loader',
+                  options: {
+                      includePaths: [path.resolve(__dirname, 'src', 'scss')],
+                      sourceMap: true
+                  }
+              }
+          ]
+      }, 
       ],
     },
   };
