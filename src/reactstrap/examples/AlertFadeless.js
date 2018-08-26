@@ -1,8 +1,8 @@
 import React from 'react';
-import { UncontrolledAlert } from 'reactstrap';
-import Alert from '../../../src/Alert';
+import { UncontrolledAlert, Alert } from 'reactstrap';
 
-export class AlertFadelessExample extends React.Component {
+
+export class AlertFadeless extends React.Component {
 
   constructor(props) {
     super(props);
@@ -29,7 +29,7 @@ export class AlertFadelessExample extends React.Component {
   }
 }
 
-export function UncontrolledAlertFadelessExample() {
+export function UncontrolledAlertFadeless() {
   return (
     <div>
       <UncontrolledAlert color="info" fade={false}>
